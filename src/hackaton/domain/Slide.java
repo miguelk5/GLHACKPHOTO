@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
+import java.util.function.Consumer;
 
 /**
  *
@@ -36,11 +36,15 @@ public class Slide implements Comparable<Slide>{
     
     public List<Tag> removeRepeatedTags(List<Tag> tags, List<Tag> tagsExts){
         List<Tag> result = new ArrayList();
-        for (Tag tag : tags){
-                    for (Tag tagExt : tagsExts){
-                        if(!tagExt.getName().equals(tag.getName())){ result.add(tag);}
-                    }
-        }
+        tags.stream().forEach(new Consumer<Tag>() {
+
+            @Override
+            public void accept(Tag tag) {
+                tagsExts.stream().filter((tagExt) -> (!tagExt.getName().equals(tag.getName()))).forEach((_item) -> {
+                    result.add(_item);
+                });
+            }
+        });
         return result;
     }
     

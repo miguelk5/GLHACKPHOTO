@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JFileChooser;
 
 /**
  *
@@ -22,7 +23,14 @@ import java.util.List;
 
 public class Lector {
 
-
+        public static File open_file (String title){
+        JFileChooser file_choicer = new JFileChooser();
+        file_choicer.requestFocus();
+        file_choicer.setDialogTitle(title);
+        file_choicer.showOpenDialog(null);
+        File target_file = file_choicer.getSelectedFile();       
+        return target_file;
+        }
 	
 	public static List<String> leeArchivo(File archivo) {
 
@@ -41,7 +49,9 @@ public class Lector {
 
 		reader.close();		
 	} catch (IOException e) {
-		e.printStackTrace();
+            System.out.println("Error with target file : " + archivo.getAbsolutePath()+  " cause : "  + e.getMessage());
+            System.out.println("Pickup file manually");
+	    open_file("SELECT VALID PIZZA FILE");
 	}
          return listaFotos;
     }
