@@ -5,25 +5,28 @@
  */
 package hackaton.utils;
 import hackaton.Hackaton;
-    import java.io.BufferedReader;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFileChooser;
 
 /**
  *
- * @author ricardo
+ * @author miguelk5
  */
 
-	@SuppressWarnings("null")
-
+@SuppressWarnings("null")
 public class Lector {
 
-        public static File open_file (String title){
+    /**
+     *
+     * @param title
+     * @return
+     */
+    public static File open_file (String title){
         JFileChooser file_choicer = new JFileChooser();
         file_choicer.requestFocus();
         file_choicer.setDialogTitle(title);
@@ -32,7 +35,12 @@ public class Lector {
         return target_file;
         }
 	
-	public static List<String> leeArchivo(File archivo) {
+    /**
+     *
+     * @param archivo
+     * @return
+     */
+    public static List<String> leeArchivo(File archivo) {
 
             List<String> listaFotos = new ArrayList();
             

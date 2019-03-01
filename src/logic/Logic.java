@@ -13,10 +13,15 @@ import java.util.stream.Collectors;
 
 /**
  *
- * @author ricardo
+ * @author miguelk5
  */
 public class Logic {
     
+    /**
+     *
+     * @param raw
+     * @return
+     */
     public static Slide convieteFoto(String raw){
         try{
      String[] raws = raw.split(" ");
@@ -34,18 +39,28 @@ public class Logic {
      }catch(Exception e){return null;}
     }
     
+    /**
+     *
+     * @param rawPhotos
+     * @return
+     */
     public static List<Slide> convierteFotosRaw(List<String> rawPhotos){
         List<Slide> nuevaLista = new ArrayList();
-    for(String rawPhoto : rawPhotos){
-       Slide miSlide = convieteFoto(rawPhoto);
-       
-       if(miSlide!= null){miSlide.orderTags();nuevaLista.add(miSlide);}
-    
-    }
+        rawPhotos.stream().map((rawPhoto) -> convieteFoto(rawPhoto)).filter((miSlide) -> (miSlide!= null)).map((miSlide) -> {
+            miSlide.orderTags();
+            return miSlide;
+        }).forEach((miSlide) -> {
+            nuevaLista.add(miSlide);
+        });
         return nuevaLista;
     }
     
-   
+    /**
+     *
+     * @param tipo
+     * @param slides
+     * @return
+     */
     public static List<Slide> obtienePorTipo(String tipo , List<Slide> slides){
     return slides.parallelStream().filter( (mySlide) -> {return tipo.equals(mySlide.getKind());}).collect(Collectors.toList());
     }

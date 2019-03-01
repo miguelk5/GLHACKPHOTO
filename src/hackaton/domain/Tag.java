@@ -7,20 +7,32 @@ package hackaton.domain;
 
 /**
  *
- * @author ricardo
+ * @author miguelk5
  */
 public class Tag implements Comparable<Tag>  {
     
     private String name;
 
+    /**
+     *
+     * @param name
+     */
     public Tag(String name) {
         this.name = name;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }

@@ -10,7 +10,7 @@ import java.util.Objects;
 
 /**
  *
- * @author ricardo
+ * @author miguelk5
  */
 public class Intersection {
     
@@ -21,6 +21,14 @@ public class Intersection {
     private List<Tag> tagsNotInRight;
     private List<Tag> tagsNotInRightLeft;
 
+    /**
+     *
+     * @param sliceLeft
+     * @param sliceRight
+     * @param differentTags
+     * @param tagsNotInRight
+     * @param tagsNotInRightLeft
+     */
     public Intersection(Slide sliceLeft, Slide sliceRight, List<Tag> differentTags, List<Tag> tagsNotInRight, List<Tag> tagsNotInRightLeft) {
         this.sliceLeft = sliceLeft;
         this.sliceRight = sliceRight;
@@ -29,53 +37,104 @@ public class Intersection {
         this.tagsNotInRightLeft = tagsNotInRightLeft;
     }
 
+    /**
+     *
+     */
     public Intersection() {
     }
 
+    /**
+     *
+     * @return
+     */
     public Slide getSliceLeft() {
         return sliceLeft;
     }
 
+    /**
+     *
+     * @param sliceLeft
+     */
     public void setSliceLeft(Slide sliceLeft) {
         this.sliceLeft = sliceLeft;
     }
 
+    /**
+     *
+     * @return
+     */
     public Slide getSliceRight() {
         return sliceRight;
     }
 
+    /**
+     *
+     * @param sliceRight
+     */
     public void setSliceRight(Slide sliceRight) {
         this.sliceRight = sliceRight;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getScore() {
         return score;
     }
 
+    /**
+     *
+     * @param score
+     */
     public void setScore(int score) {
         this.score = score;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Tag> getDifferentTags() {
         return differentTags;
     }
 
+    /**
+     *
+     * @param differentTags
+     */
     public void setDifferentTags(List<Tag> differentTags) {
         this.differentTags = differentTags;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Tag> getTagsNotInRight() {
         return tagsNotInRight;
     }
 
+    /**
+     *
+     * @param tagsNotInRight
+     */
     public void setTagsNotInRight(List<Tag> tagsNotInRight) {
         this.tagsNotInRight = tagsNotInRight;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Tag> getTagsNotInRightLeft() {
         return tagsNotInRightLeft;
     }
 
+    /**
+     *
+     * @param tagsNotInRightLeft
+     */
     public void setTagsNotInRightLeft(List<Tag> tagsNotInRightLeft) {
         this.tagsNotInRightLeft = tagsNotInRightLeft;
     }

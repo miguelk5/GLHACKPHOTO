@@ -15,13 +15,19 @@ import logic.Logic;
 
 /**
  *
- * @author ricardo
+ * @author miguelk5
  */
 public class Hackaton {
 
-    
+    /**
+     *
+     */
     public static int PHOTO_NUMBER;
     
+    /**
+     *
+     * @return
+     */
     public static File start(){    
     int option = 1;
     File resultFile = null;
