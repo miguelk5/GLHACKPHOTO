@@ -204,7 +204,7 @@ public class Slide implements Comparable<Slide>{
 
     @Override
     public String toString() {
-        return "Slide{" + "id=" + id + ", kind=" + kind + ", isUsed=" + isUsed + ", tags=" + tags.size() + '}' + "\n";
+        return "Slide{" + "id=" + id + ", kind=" + kind + ", isUsed=" + isUsed + ", tags number=" + tags.size() +  ", tags =" + tags + '}' + "\n";
     }
 
     @Override
